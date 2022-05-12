@@ -122,44 +122,32 @@ class _MainPageState extends State<MainPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: RowCard(
-                              icon: Icons.house_sharp,
-                              title: 'At Home',
-                              description: '17 Doctors',
-                            ),
+                          RowCard(
+                            icon: Icons.house_sharp,
+                            title: 'At Home',
+                            description: '17 Doctors',
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: RowCard(
-                              icon: Icons.medical_services,
-                              title: 'At His House',
-                              description: '31 Doctors',
-                            ),
+                          RowCard(
+                            icon: Icons.medical_services,
+                            title: 'At His House',
+                            description: '31 Doctors',
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: RowCard(
-                              icon: Icons.wifi,
-                              title: 'Online',
-                              description: '34 Doctors',
-                            ),
+                          RowCard(
+                            icon: Icons.wifi,
+                            title: 'Online',
+                            description: '34 Doctors',
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: RowCard(
-                              icon: Icons.coffee,
-                              title: 'At a Cafe',
-                              description: '8 Doctors',
-                            ),
+                          RowCard(
+                            icon: Icons.coffee,
+                            title: 'At a Cafe',
+                            description: '8 Doctors',
                           ),
                         ],
                       ),
                     ),
                   ),
                   _getTopic('Top Rate'),
-                  
+
                   // Lazy loading é melhor, mas como a aplicação é pequena optei por esse aqui mesmo...
                   FutureBuilder<List<GitUser>>(
                     future: futureGitUserList,
