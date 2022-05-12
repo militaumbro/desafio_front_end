@@ -7,7 +7,10 @@ class ApiController {
   ApiController();
   List<GitUser> gitUsers;
   Future<List<GitUser>> getGitHubUsers() async {
-    final response = await http.get(Uri.parse('https://api.github.com/users'));
+    // per_page me permite chamar poucos usuários para não abusar da internet do usuário.
+    // o ideal é carregar de forma "lazy", mas para para este teste decidi fazer desta forma
+    final response =
+        await http.get(Uri.parse('https://api.github.com/users?per_page=10'));
 
     if (response.statusCode == 200) {
       print(jsonDecode(response.body));
